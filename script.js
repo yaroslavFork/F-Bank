@@ -79,7 +79,22 @@ btn.textContent='АКТИВИРОВАТЬ';btn.disabled=false;
 
 // ── AUTH ──
 async function init(){
-await new Promise(r=>setTimeout(r,800));
+try{
+// Test connection
+await Promise.race([
+sb.from('users').select('count',{count:'exact',head:true}),
+new Promise((_,reject)=>setTimeout(()=>reject(new Error('timeout')),8000))
+]);
+}catch(e){
+document.querySelector('.loading-text').textContent='Ошибка подключения';
+console.error('Supabase error:',e);
+// Still show login after error
+setTimeout(()=>{
+document.getElementById('loadingScreen').classList.add('hidden');
+document.getElementById('loginScreen').classList.remove('hidden');
+},1500);
+return;
+}
 document.getElementById('loadingScreen').classList.add('hidden');
 document.getElementById('loginScreen').classList.remove('hidden');
 updateStatusTime();
