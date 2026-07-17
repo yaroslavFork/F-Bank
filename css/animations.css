@@ -1,0 +1,242 @@
+/* F-BANK / Forklandia
+   Все keyframe-анимации приложения.
+   Важно: :active transform НЕ используется — вместо этого anim-btn-press. */
+
+/* ==================== БАЗОВЫЕ ПОЯВЛЕНИЯ ==================== */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.anim-fade-in-up {
+  animation: fadeInUp 0.4s ease-out both;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.anim-fade-in-down {
+  animation: fadeInDown 0.4s ease-out both;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.anim-slide-in {
+  animation: slideIn 0.35s ease-out both;
+}
+
+/* ==================== ПУЛЬС / СВЕЧЕНИЕ ==================== */
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.06);
+    opacity: 0.85;
+  }
+}
+.anim-pulse {
+  animation: pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    box-shadow: 0 0 8px rgba(0, 255, 136, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 24px rgba(0, 255, 136, 0.85);
+  }
+}
+.anim-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+/* ==================== ОШИБКА / ТРЯСКА ==================== */
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-8px);
+  }
+  40% {
+    transform: translateX(8px);
+  }
+  60% {
+    transform: translateX(-6px);
+  }
+  80% {
+    transform: translateX(6px);
+  }
+}
+.anim-shake {
+  animation: shake 0.4s ease-in-out;
+}
+
+/* ==================== НАЖАТИЕ КНОПКИ (замена :active transform) ==================== */
+
+@keyframes btnPress {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.anim-btn-press {
+  animation: btnPress 0.18s ease-out;
+}
+
+/* ==================== ЗАМОРОЖЕННАЯ КАРТА ==================== */
+
+@keyframes frozenPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 12px rgba(0, 180, 255, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 32px rgba(0, 180, 255, 0.95);
+  }
+}
+.anim-frozen-pulse {
+  animation: frozenPulse 2s ease-in-out infinite;
+}
+
+/* ==================== ДОЖДЬ ИЗ МОНЕТ ==================== */
+
+.coin-rain-layer {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+@keyframes coinRain {
+  0% {
+    transform: translateY(-10vh) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0.9;
+  }
+}
+.coin {
+  position: absolute;
+  top: 0;
+  font-size: 28px;
+  animation-name: coinRain;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+}
+
+/* ==================== ПОЯВЛЕНИЕ МОДАЛЬНЫХ/ФУЛЛСКРИН ЭЛЕМЕНТОВ ==================== */
+
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  70% {
+    transform: scale(1.03);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.anim-pop-in {
+  animation: popIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+/* ==================== ВСПЛЫВАЮЩЕЕ ЧИСЛО (баланс) ==================== */
+
+@keyframes numberPop {
+  0% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.25);
+    color: #00ff88;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.anim-number-pop {
+  display: inline-block;
+  animation: numberPop 0.6s ease-out;
+}
+
+/* ==================== REALTIME-ИНДИКАТОР ==================== */
+
+@keyframes rtPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 255, 136, 0.6);
+    opacity: 1;
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(0, 255, 136, 0);
+    opacity: 0.7;
+  }
+}
+.rt-pulse {
+  animation: rtPulse 1.8s ease-in-out infinite;
+}
+
+/* ==================== SPLASH SPINNER ==================== */
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes splashPulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.05);
+  }
+}
+.anim-splash-pulse {
+  animation: splashPulse 1.8s ease-in-out infinite;
+}

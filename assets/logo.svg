@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" fill="none">
+  <defs>
+    <linearGradient id="fbankGradMain" x1="40" y1="220" x2="220" y2="30" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#00ff88"/>
+      <stop offset="0.5" stop-color="#00c9a7"/>
+      <stop offset="1" stop-color="#0a4d8a"/>
+    </linearGradient>
+    <filter id="fbankGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Неоновая подложка (мягкое свечение формы) -->
+  <g filter="url(#fbankGlow)" opacity="0.85">
+    <path d="M65,205 L65,95 L150,95 L198,47"
+      stroke="url(#fbankGradMain)" stroke-width="30"
+      stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <path d="M65,150 L128,150"
+      stroke="url(#fbankGradMain)" stroke-width="26"
+      stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <polygon points="221,24 196,86 158,54" fill="url(#fbankGradMain)"/>
+  </g>
+
+  <!-- Основная чёткая форма поверх свечения -->
+  <path d="M65,205 L65,95 L150,95 L198,47"
+    stroke="url(#fbankGradMain)" stroke-width="30"
+    stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M65,150 L128,150"
+    stroke="url(#fbankGradMain)" stroke-width="26"
+    stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <polygon points="221,24 196,86 158,54" fill="url(#fbankGradMain)"/>
+</svg>

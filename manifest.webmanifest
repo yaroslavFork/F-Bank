@@ -1,0 +1,25 @@
+{
+  "name": "F-BANK — Forklandia",
+  "short_name": "F-BANK",
+  "description": "Официальное банковское приложение Форкляндии. Валюта: Дамблы (DUM).",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#020608",
+  "theme_color": "#020608",
+  "icons": [
+    {
+      "src": "assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}

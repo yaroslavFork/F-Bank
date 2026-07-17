@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" fill="none">
+  <defs>
+    <linearGradient id="fbankFaviconGrad" x1="40" y1="220" x2="220" y2="30" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#00ff88"/>
+      <stop offset="0.5" stop-color="#00c9a7"/>
+      <stop offset="1" stop-color="#0a4d8a"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="240" height="240" rx="48" fill="#020608"/>
+  <path d="M65,205 L65,95 L150,95 L198,47"
+    stroke="url(#fbankFaviconGrad)" stroke-width="30"
+    stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M65,150 L128,150"
+    stroke="url(#fbankFaviconGrad)" stroke-width="26"
+    stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <polygon points="221,24 196,86 158,54" fill="url(#fbankFaviconGrad)"/>
+</svg>
